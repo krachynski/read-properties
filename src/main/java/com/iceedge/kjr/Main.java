@@ -21,8 +21,8 @@ public class Main {
             logger.error("Could not find my configuration");
         }
 
-        System.out.println(props.getProperty("greeting", "MISSING GREETING"));
-        System.out.println(props.getProperty("quote", "MISSING QUOTE"));
+        logger.info("Greeting: {}", props.getProperty("greeting", "MISSING GREETING"));
+        logger.info("Quote: {}", props.getProperty("quote", "MISSING QUOTE"));
     }
 
     private void loadProps() throws IOException {
