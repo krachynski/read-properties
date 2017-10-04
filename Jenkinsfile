@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sendNotifications
+                sendNotifications 'STARTING'
                 bat("mvn -B -V -U -s ${MVN_SETTINGS} clean deploy -DbuildNumber=${BUILD_NUMBER}")
             }
         }
