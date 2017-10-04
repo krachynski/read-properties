@@ -6,6 +6,7 @@ pipeline {
     }
     environment {
         MVN_SETTINGS=credentials('maven-settings-windows')
+        JAVA_HOME=tool '1.8.0_102-win'
     }
     tools {
         maven 'Maven35'
