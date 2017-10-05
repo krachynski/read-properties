@@ -10,7 +10,7 @@ pipeline {
     }
     tools {
         maven 'Maven35'
-        jdk '1.8.0_102-win'
+        jdk 'jdk-1.8.0-102-win'
     }
     stages {
         stage('Build') {
