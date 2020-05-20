@@ -28,16 +28,14 @@ public class Main {
     private void loadProps() throws IOException {
         props.load(this.getClass().getResourceAsStream("/app.properties"));
 
-        FileInputStream e;
-        try {
-            e = new FileInputStream("app.properties");
+
+        try (FileInputStream e = new FileInputStream("app.properties")) {
             props.load(e);
         } catch (FileNotFoundException ex) {
             logger.debug("No overriding property file found");
         }
 
-        try {
-            e = new FileInputStream("developer/app.properties");
+        try (FileInputStream e = new FileInputStream("developer/app.properties")) {
             props.load(e);
         } catch (FileNotFoundException ex) {
             logger.debug("No overriding developer property file found");
