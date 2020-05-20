@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <artifactory.url>http://artifactory-yyc.iceedge.local:8081/artifactory</artifactory.url>
+        <artifactory.url>http://artifactory-yyc.iceedge.local/artifactory</artifactory.url>
     </properties>
 
     <scm>
