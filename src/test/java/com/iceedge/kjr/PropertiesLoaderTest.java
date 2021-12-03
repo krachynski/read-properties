@@ -6,16 +6,14 @@ import java.util.Properties;
 
 import static org.junit.Assert.assertEquals;
 
-public class testLoadProperties {
+public class PropertiesLoaderTest {
     @Test
     public void loadPropertiesTest() {
         PropertiesLoader propertiesLoader = new PropertiesLoader();
         Properties properties = new Properties();
 
 
-        propertiesLoader.loadProperties(properties,
-                this.getClass(),
-                "/app.properties");
+        propertiesLoader.loadProperties(properties, this.getClass(), "/app.properties");
 
         assertEquals("true", properties.getProperty("default"));
         assertEquals("false", properties.getProperty("override"));
@@ -28,11 +26,7 @@ public class testLoadProperties {
         Properties properties = new Properties();
 
 
-        propertiesLoader.loadProperties(properties,
-                this.getClass(),
-                "/app.properties",
-                "src/test/unmanaged-resources/app.properties",
-                "src/test/unmanaged-resources/developer/app.properties");
+        propertiesLoader.loadProperties(properties, this.getClass(), "/app.properties", "src/test/unmanaged-resources/app.properties", "src/test/unmanaged-resources/developer/app.properties");
 
         assertEquals("true", properties.getProperty("default"));
         assertEquals("true", properties.getProperty("override"));

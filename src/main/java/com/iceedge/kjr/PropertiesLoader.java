@@ -11,18 +11,13 @@ import java.util.Properties;
 public class PropertiesLoader {
     private static final Logger logger = LoggerFactory.getLogger(PropertiesLoader.class);
 
-    public void loadProperties(Properties properties,
-                               Class clazz,
-                               String resource,
-                               String... alternateLocations) {
+    public void loadProperties(Properties properties, Class<?> clazz, String resource, String... alternateLocations) {
         InputStream stream = clazz.getResourceAsStream(resource);
         logger.debug("Will attempt to load properties from " + resource);
         loadProperties(properties, stream, alternateLocations);
     }
 
-    public void loadProperties(Properties properties,
-                               InputStream stream,
-                               String... alternateLocations) {
+    public void loadProperties(Properties properties, InputStream stream, String... alternateLocations) {
         if (properties == null) {
             properties = new Properties();
         }
@@ -31,7 +26,7 @@ public class PropertiesLoader {
             try {
                 properties.load(stream);
             } catch (IOException e) {
-                logger.trace("Unable to load properties from " + stream.toString(), e);
+                logger.trace("Unable to load properties from " + stream, e);
             }
         }
         for (String alternateLocation : alternateLocations) {
