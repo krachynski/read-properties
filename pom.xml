@@ -12,27 +12,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <artifactory.url>http://artifactory-yyc.iceedge.local/artifactory</artifactory.url>
         <junit-jupiter.version>5.8.1</junit-jupiter.version>
     </properties>
 
     <scm>
-        <connection>scm:git:git@bitbucket.org:iceedge/read-properties.git</connection>
+        <connection>scm:git:git@github.com:ice-edge/read-properties.git</connection>
         <tag>HEAD</tag>
     </scm>
-
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>central</name>
-            <url>${artifactory.url}/libs-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>snapshots</name>
-            <url>${artifactory.url}/libs-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <build>
         <plugins>
@@ -73,12 +59,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version>
+            <version>1.7.35</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.7</version>
+            <version>1.2.10</version>
         </dependency>
         <!--JUnit Jupiter Engine to depend on the JUnit5 engine and JUnit 5 API -->
         <dependency>
